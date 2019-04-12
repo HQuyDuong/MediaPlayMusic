@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+
+    <ImageView
+        android:id="@+id/LogoMusic"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="250dp"
+        />
+
+    <TextView
+        android:id="@+id/TenBaiHat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        />
+
+    <SeekBar
+        android:id="@+id/TimeBaiHat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginLeft="65dp"
+        />
+
+    <TextView
+        android:id="@+id/presenttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        />
+
+    <TextView
+        android:id="@+id/totaltime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentRight="true" />
+
+    <ImageButton
+        android:id="@+id/buttonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/play"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        />
+
+    <ImageButton
+        android:id="@+id/buttonAddMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/add"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="7dp"
+        android:layout_toEndOf="@+id/buttonRepeat"
+        android:layout_toRightOf="@+id/buttonRepeat"
+        />
+
+    <ImageButton
+        android:id="@+id/buttonRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="7dp"
+        android:layout_toEndOf="@+id/buttonNext"
+        android:layout_toRightOf="@+id/buttonNext"
+        app:srcCompat="@drawable/repeat" />
+
+    <ImageButton
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="7dp"
+        android:layout_toEndOf="@+id/buttonPlay"
+        app:srcCompat="@drawable/next"
+        android:layout_toRightOf="@+id/buttonPlay" />
+
+    <ImageButton
+        android:id="@+id/ButtonRewind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/rewind"
+        android:layout_toStartOf="@+id/buttonPlay"
+        android:layout_toLeftOf="@+id/buttonPlay"
+        android:layout_marginRight="7dp"
+        />
+
+    <ImageButton
+        android:id="@+id/ButtonShuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/shuffle"
+        android:layout_toStartOf="@+id/ButtonRewind"
+        android:layout_toLeftOf="@+id/ButtonRewind"
+        android:layout_marginRight="7dp"
+        />
+
+    <ImageButton
+        android:id="@+id/ButtonAddDanhSachYeuThich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/heart"
+        android:layout_toStartOf="@+id/ButtonShuffle"
+        android:layout_toLeftOf="@+id/ButtonShuffle"
+        android:layout_marginRight="7dp"
+        />
+
+        />
+</RelativeLayout>
