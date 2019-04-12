@@ -41,71 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_item_song, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    public static class PlaceholderFragment extends Fragment {
-        ImageButton bntSort;
-        Context context;
-        private static final String KEY_COLOR = "key_color";
 
-        public PlaceholderFragment() {
-        }
-
-        // Method static dạng singleton, cho phép tạo fragment mới, lấy tham số đầu vào để cài đặt màu sắc.
-        public static PlaceholderFragment newInstance(int color) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(KEY_COLOR, color);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment, container, false);
-            RelativeLayout relativeLayout = (RelativeLayout) rootView.findViewById(R.id.rl_fragment);
-
-            /**
-             * Số 1: Màu xanh.
-             * Số 2: Màu đỏ.
-             * Số 3: Màu vàng.
-             */
-            switch (getArguments().getInt(KEY_COLOR)) {
-                case 1:
-                    relativeLayout.setBackgroundResource(R.drawable.backgroundmedia);
-                    break;
-                case 2:
-                    relativeLayout.setBackgroundColor(Color.BLUE);
-                    break;
-                case 3:
-                    relativeLayout.setBackgroundResource(R.drawable.backgroundmedia);
-                    break;
-                default:
-                    relativeLayout.setBackgroundResource(R.drawable.backgroundmedia);
-                    break;
-            }
-
-            bntSort = rootView.findViewById(R.id.buttonItemSong);
-            bntSort.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showMenu();
-                }
-            });
-            return rootView;
-        }
-        private void showMenu() {
-            PopupMenu popupMenu = new PopupMenu(context, bntSort);
-            popupMenu.getMenuInflater().inflate(R.menu.menu_item_song, popupMenu.getMenu());
-            popupMenu.show();
-        }
-
-
-    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -116,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             // position + 1 vì position bắt đầu từ số 0.
-            return PlaceholderFragment.newInstance(position + 1);
+            return FragmentBaiHat.newInstance(position + 1);
         }
 
         @Override
