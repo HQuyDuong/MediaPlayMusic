@@ -1,5 +1,6 @@
 package com.example.mediaplaymusic;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
@@ -11,14 +12,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
     private ViewPager mViewPager;
 
     @Override
@@ -35,10 +38,17 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_song, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
     public static class PlaceholderFragment extends Fragment {
-
+        ImageButton bntSort;
+        Context context;
         private static final String KEY_COLOR = "key_color";
 
         public PlaceholderFragment() {
@@ -69,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     relativeLayout.setBackgroundResource(R.drawable.backgroundmedia);
                     break;
                 case 2:
-                    relativeLayout.setBackgroundResource(R.drawable.backgroundmedia);
+                    relativeLayout.setBackgroundColor(Color.BLUE);
                     break;
                 case 3:
                     relativeLayout.setBackgroundResource(R.drawable.backgroundmedia);
@@ -79,10 +89,22 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText("Kteam");
+            bntSort = rootView.findViewById(R.id.buttonItemSong);
+            bntSort.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showMenu();
+                }
+            });
             return rootView;
         }
+        private void showMenu() {
+            PopupMenu popupMenu = new PopupMenu(context, bntSort);
+            popupMenu.getMenuInflater().inflate(R.menu.menu_item_song, popupMenu.getMenu());
+            popupMenu.show();
+        }
+
+
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
